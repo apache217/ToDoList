@@ -1,0 +1,62 @@
+[
+  {
+    "id": "0",
+    "login": "vlados@mail.ru",
+    "password": "Pa$$word1!",
+    "name": "Vlados",
+    "isAdmin": false,
+    "age": 24,
+    "isMan": true,
+    "city": "Minsk"
+  },
+  {
+    "id": "1",
+    "login": "example@example.com",
+    "password": "Pa$$word1!",
+    "name": "Vlad",
+    "isAdmin": false,
+    "age": 24,
+    "isMan": true,
+    "city": "Minsk"
+  },
+  {
+    "id": "2",
+    "login": "diana@mail.ru",
+    "password": "Pa$$word1!",
+    "name": "Diana",
+    "isAdmin": false,
+    "age": 26,
+    "isMan": false,
+    "city": "Minsk"
+  },
+  {
+    "id": "3",
+    "login": "lesha@mail.ru",
+    "password": "Pa$$word1!",
+    "name": "Lesha",
+    "isAdmin": false,
+    "age": 24,
+    "isMan": true,
+    "city": "Minsk"
+  },
+  {
+    "id": "4",
+    "login": "pasha@mail.ru",
+    "password": "Pa$$word1!",
+    "name": "Pasha",
+    "isAdmin": true,
+    "age": 25,
+    "isMan": true,
+    "city": "Minsk"
+  },
+  {
+    "id": "5",
+    "login": "example@example.com",
+    "password": "Pa$$word1!",
+    "name": "Meek",
+    "isAdmin": false,
+    "age": 32,
+    "isMan": true,
+    "city": "Catswill"
+  }
+]

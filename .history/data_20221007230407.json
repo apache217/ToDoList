@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": "ba66cb2c-3e91-11ed-b878-0242ac120002",
+      "login": "vladislavbogushevich123@gmail.com",
+      "password": "Pa$$word1!",
+      "name": "Vladislav",
+      "age": 24,
+      "isMan": true,
+      "city": "Minsk",
+      "isAdmin": false
+    }
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "text": "ToDoList",
+      "isDone": false,
+      "userId": "ba66cb2c-3e91-11ed-b878-0242ac120002"
+    },
+    {
+      "id": 2,
+      "text": "TODOLIST",
+      "isDone": false,
+      "userId": "ba66cb2c-3e91-11ed-b878-0242ac120002"
+    },
+    {
+      "id": 3,
+      "text": "TODOLIST BETTER",
+      "isDone": false,
+      "userId": "ba66cb2c-3e91-11ed-b878-0242ac120002"
+    },
+    {
+      "id": 4,
+      "text": "TODOLIST BETTER HARDER",
+      "isDone": false,
+      "userId": "ba66cb2c-3e91-11ed-b878-0242ac120002"
+    },
+    {
+      "id": 5,
+      "text": "TODOLIST BETTER HARDER STRONGER",
+      "isDone": false,
+      "userId": "ba66cb2c-3e91-11ed-b878-0242ac120002"
+    },
+    {
+      "id": 6,
+      "text": "TODOLIST BETTER HARDER FASTER STRONGER",
+      "isDone": false,
+      "userId": "ba66cb2c-3e91-11ed-b878-0242ac120002"
+    }
+  ]
+}

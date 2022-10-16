@@ -1,0 +1,15 @@
+[
+  {
+    "user": {
+      "id": "dft7uj",
+      "login": "vladislavbogushevich123@gmail.com",
+      "password": "Pa$$word1!",
+      "name": "Vladislav",
+      "age": 24,
+      "isMan": true,
+      "city": "Minsk",
+      "isAdmin": false
+    },
+    "todos": {}
+  }
+]

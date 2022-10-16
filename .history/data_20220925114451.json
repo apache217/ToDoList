@@ -1,0 +1,15 @@
+[
+  {
+    "user": {
+      "id": "0",
+      "login": "vlados@mail.ru",
+      "password": "Pa$$word1!",
+      "name": "Vlados",
+      "isAdmin": false,
+      "age": 24,
+      "isMan": true,
+      "city": "Minsk"
+    },
+    "data": {}
+  }
+]

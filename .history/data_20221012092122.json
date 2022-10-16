@@ -1,0 +1,23 @@
+{
+  "users": [],
+  "todos": [
+    {
+      "title": "TODOLIST get todos, post todo, refactor post todo",
+      "isCompleted": false,
+      "idUser": "ba66cb2c-3e91-11ed-b878-0242ac120002",
+      "id": "86c902e0-46ec-11ed-b497-d538e6a82ce4"
+    },
+    {
+      "title": "one more task",
+      "isCompleted": false,
+      "idUser": "ba66cb2c-3e91-11ed-b878-0242ac120002",
+      "id": "c943b030-4722-11ed-a0b6-ef937cab891a"
+    },
+    {
+      "title": "and one more for tests",
+      "isCompleted": false,
+      "idUser": "ba66cb2c-3e91-11ed-b878-0242ac120002",
+      "id": "d415ebe0-4722-11ed-bf7c-af961e65661a"
+    }
+  ]
+}

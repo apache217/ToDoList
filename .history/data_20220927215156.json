@@ -1,0 +1,22 @@
+[
+  {
+    "users": [
+      {
+        "id": "ba66cb2c-3e91-11ed-b878-0242ac120002",
+        "login": "vladislavbogushevich123@gmail.com",
+        "password": "Pa$$word1!",
+        "name": "Vladislav",
+        "age": 24,
+        "isMan": true,
+        "city": "Minsk",
+        "isAdmin": false
+      }
+    ],
+    "todos": {
+      "1": {
+        "text": "ToDoList",
+        "status": "In process"
+      }
+    }
+  }
+]
