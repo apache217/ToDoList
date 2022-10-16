@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "login": "vladislavbogushevich123@gmail.com",
+      "password": "$2b$10$L1/3sRMdn7iu2m6FdMeY/eVoPlkoZnGs4Ty.gUoxZwczbl5Lb5ASS",
+      "name": "Vladislav",
+      "age": 24,
+      "isMan": true,
+      "city": "Minsk",
+      "isAdmin": false,
+      "idUser": "b6945220-4a31-11ed-8202-5bf0d5901777"
+    }
+  ],
+  "todos": [
+    {
+      "title": "test",
+      "isCompleted": false,
+      "idUser": "b6945220-4a31-11ed-8202-5bf0d5901777",
+      "id": "cfcc63b0-4bf6-11ed-9ac8-57fb7433edc9"
+    }
+  ]
+}

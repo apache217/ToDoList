@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "login": "vladislavbogushevich123@gmail.com",
+      "password": "$2b$10$L1/3sRMdn7iu2m6FdMeY/eVoPlkoZnGs4Ty.gUoxZwczbl5Lb5ASS",
+      "name": "Vladislav",
+      "age": 24,
+      "isMan": true,
+      "city": "Minsk",
+      "isAdmin": false,
+      "idUser": "b6945220-4a31-11ed-8202-5bf0d5901777"
+    },
+    {
+      "login": "test@gmail.com",
+      "password": "$2b$10$plx1kfiIcJZVxSBaXarQ4.IG/d.Ea03M5Zxlpe6iPTQF54o0GesxC",
+      "name": "Pasha",
+      "age": 25,
+      "isMan": true,
+      "city": "Minsk",
+      "isAdmin": true,
+      "idUser": "432c0f10-4c7c-11ed-93d6-c9994349a716"
+    }
+  ],
+  "todos": [
+    {
+      "title": "test",
+      "isCompleted": false,
+      "idUser": "b6945220-4a31-11ed-8202-5bf0d5901777",
+      "id": "cfcc63b0-4bf6-11ed-9ac8-57fb7433edc9"
+    },
+    {
+      "title": "test for another user",
+      "isCompleted": false,
+      "id": "98d11b90-4c7c-11ed-bedc-f3bb61f2ec6f",
+      "idUser": "432c0f10-4c7c-11ed-93d6-c9994349a716"
+    }
+  ]
+}
