@@ -11,8 +11,9 @@ class TodoService {
             return res(false);
           }
           const users = JSON.parse(data).users;
+          const filtredUser = {};
           if (users) {
-            const filtredUser = users.find((item) => item.login === login);
+            filtredUser = users.find((item) => item.login === login);
             return res(filtredUser);
           } else {
             return res(false);

@@ -1,3 +1,4 @@
+const jwt = require("jsonwebtoken");
 const TodoService = require("../services/todo.service");
 const uuid = require("uuid");
 const Sentry = require("@sentry/node");
@@ -42,11 +43,14 @@ class TodoController {
   }
   async patchTitle(req, res) {
     try {
+      const result = {};
       const task = req.todos.find((item) => item.id === req.params.id);
       task
         ? (task.title = req.body.title)
         : res.status(404).send(`Task is not found!`);
-      const write = await TodoService.patchTitle(req.data);
+      result.users = req.users;
+      result.todos = req.todos;
+      const write = await TodoService.patchTitle(result);
       write
         ? res.status(200).send(`Title is changed!`)
         : res.status(500).send(`Title is not changed!`);
@@ -57,11 +61,14 @@ class TodoController {
   }
   async patchStatus(req, res) {
     try {
-      const task = req.todos.find((item) => item.id === req.params.id);
-      task
-        ? (task.isCompleted = req.body.isCompleted)
-        : res.status(404).send(`Task is not found!`);
-      const write = await TodoService.patchStatus(req.data);
+      const result = {};
+      !req.todos.find((item) => item.id === req.params.id)
+        ? res.status(404).send(`Task is not found!`)
+        : (req.todos.find((item) => item.id === req.params.id).isCompleted =
+            req.body.isCompleted);
+      result.users = req.users;
+      result.todos = req.todos;
+      const write = await TodoService.patchStatus(result);
       write
         ? res.status(200).send(`Status is changed!`)
         : res.status(500).send(`Status is not changed!`);

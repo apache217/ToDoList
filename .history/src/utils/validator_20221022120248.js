@@ -5,6 +5,8 @@ class Validator {
     return [
       body("login")
         .exists()
+        .isLength({ min: 3 })
+        .isLength({ max: 16 })
         .isEmail()
         .matches(/^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/)
         .normalizeEmail()

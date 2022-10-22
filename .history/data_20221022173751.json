@@ -1,0 +1,15 @@
+{
+  "users": [
+    {
+      "login": "vlad@example.com",
+      "password": "$2b$10$YgdrRRHF/E1KDZdWR43CNeLjB4FtGrsOD6p4fsaLqKufHJEuWo2Ue",
+      "name": "Vlad",
+      "age": 24,
+      "isMan": true,
+      "city": "Minsk",
+      "isAdmin": false,
+      "idUser": "21e4ea60-5213-11ed-a3a3-d5c5f8b16cd9"
+    }
+  ],
+  "todos": []
+}

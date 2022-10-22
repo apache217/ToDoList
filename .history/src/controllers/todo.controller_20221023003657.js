@@ -1,3 +1,4 @@
+const jwt = require("jsonwebtoken");
 const TodoService = require("../services/todo.service");
 const uuid = require("uuid");
 const Sentry = require("@sentry/node");
@@ -42,11 +43,14 @@ class TodoController {
   }
   async patchTitle(req, res) {
     try {
-      const task = req.todos.find((item) => item.id === req.params.id);
-      task
-        ? (task.title = req.body.title)
-        : res.status(404).send(`Task is not found!`);
-      const write = await TodoService.patchTitle(req.data);
+      const result = {};
+      !req.todos.find((item) => item.id === req.params.id)
+        ? res.status(404).send(`Task is not found!`)
+        : (req.todos.find((item) => item.id === req.params.id).title =
+            req.body.title);
+      result.users = req.users;
+      result.todos = req.todos;
+      const write = await TodoService.patchTitle(result);
       write
         ? res.status(200).send(`Title is changed!`)
         : res.status(500).send(`Title is not changed!`);
@@ -57,14 +61,19 @@ class TodoController {
   }
   async patchStatus(req, res) {
     try {
-      const task = req.todos.find((item) => item.id === req.params.id);
-      task
-        ? (task.isCompleted = req.body.isCompleted)
-        : res.status(404).send(`Task is not found!`);
-      const write = await TodoService.patchStatus(req.data);
-      write
-        ? res.status(200).send(`Status is changed!`)
-        : res.status(500).send(`Status is not changed!`);
+      const result = {};
+      if (!req.todos.find((item) => item.id === req.params.id)) {
+        res.status(404).send(`Task is not found!`);
+      } else {
+        req.todos.find((item) => item.id === req.params.id).isCompleted =
+          req.body.isCompleted;
+        result.users = req.users;
+        result.todos = req.todos;
+        const write = await TodoService.patchStatus(result);
+        write
+          ? res.status(200).send(`Status is changed!`)
+          : res.status(500).send(`Status is not changed!`);
+      }
     } catch (err) {
       Sentry.captureException(err);
       res.status(400).send({ message: err.message });

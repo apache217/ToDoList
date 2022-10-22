@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "login": "vlad@example.com",
+      "password": "$2b$10$gnTlmOkvNrDpv2RZPsJVJ.UXcYnC/DdJub.FYzLio0CbGNVPofKs.",
+      "name": "Vlad",
+      "age": 24,
+      "isMan": true,
+      "city": "Minsk",
+      "isAdmin": false,
+      "idUser": "35205860-5210-11ed-8294-b36aa79da55c"
+    }
+  ],
+  "todos": [
+    {
+      "title": "test for another user",
+      "isCompleted": false,
+      "id": "42d827d0-5210-11ed-809c-6f701d5ad9ae",
+      "idUser": "35205860-5210-11ed-8294-b36aa79da55c"
+    }
+  ]
+}

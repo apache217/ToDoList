@@ -4,10 +4,9 @@ class Validator {
   validatePost(req) {
     return [
       body("login")
-        .exists()
         .isEmail()
-        .matches(/^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/)
         .normalizeEmail()
+        .matches(/^[a-zA-Z]+$/)
         .withMessage("Login must be e-mail"),
       body("password")
         .isStrongPassword({

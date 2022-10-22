@@ -6,11 +6,10 @@ const TodoService = require(`../services/todo.service`);
 const authenticateToken = require("../middleware/auth");
 
 router.use(async (req, res, next) => {
-  const data = await TodoService.getTodos();
+  let data = await TodoService.getTodos();
   if (data.todos && data.users) {
     req.todos = data.todos;
     req.users = data.users;
-    req.data = data;
     next();
   } else
     return res

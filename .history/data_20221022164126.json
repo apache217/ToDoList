@@ -1,0 +1,22 @@
+{
+  // "users": [
+  //   {
+  //     "login": "vlad@example.com",
+  //     "password": "$2b$10$IPHDHV4/q5tBYVL70s.4seUJnKX37jheaMDOYdpCxvzjAgHrrKkaK",
+  //     "name": "Vlad",
+  //     "age": 24,
+  //     "isMan": true,
+  //     "city": "Minsk",
+  //     "isAdmin": false,
+  //     "idUser": "84371ba0-51e8-11ed-8b3b-055346a069f8"
+  //   }
+  // ],
+  "todos": [
+    {
+      "title": "test for another user",
+      "isCompleted": false,
+      "id": "12282000-520f-11ed-a500-093cab0cbab3",
+      "idUser": "84371ba0-51e8-11ed-8b3b-055346a069f8"
+    }
+  ]
+}

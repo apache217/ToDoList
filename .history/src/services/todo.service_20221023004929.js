@@ -62,6 +62,7 @@ class TodoService {
   }
   patchTitle(data) {
     try {
+      data.users = req.users;
       return new Promise((res, rej) => {
         fs.writeFile(
           "./data.json",

@@ -6,7 +6,6 @@ class Validator {
       body("login")
         .exists()
         .isEmail()
-        .matches(/^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/)
         .normalizeEmail()
         .withMessage("Login must be e-mail"),
       body("password")

@@ -11,12 +11,11 @@ class TodoService {
             return res(false);
           }
           const users = JSON.parse(data).users;
-          if (users) {
-            const filtredUser = users.find((item) => item.login === login);
-            return res(filtredUser);
-          } else {
-            return res(false);
-          }
+          let filtredUser = {};
+          users ? filtredUser = users.find(
+            (item) => item.login === login
+          ) : res.status().send("Users are empty!");
+          return res(filtredUser);
         });
       } catch (err) {
         console.log(err);

@@ -10,7 +10,6 @@ router.use(async (req, res, next) => {
   if (data.todos && data.users) {
     req.todos = data.todos;
     req.users = data.users;
-    req.data = data;
     next();
   } else
     return res

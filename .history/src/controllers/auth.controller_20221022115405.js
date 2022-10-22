@@ -74,7 +74,7 @@ class AuthControllers {
             throw new Error("Incorrect username or password!");
           }
         } else {
-          throw new Error("Internal server error!");
+          throw new Error("Incorrect username or password!");
         }
       }
     } catch (err) {

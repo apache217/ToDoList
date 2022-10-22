@@ -12,7 +12,10 @@ class TodoService {
           }
           const users = JSON.parse(data).users;
           if (users) {
-            const filtredUser = users.find((item) => item.login === login);
+            filtredUser = Object.assign(
+              filtredUser,
+              users.find((item) => item.login === login)
+            );
             return res(filtredUser);
           } else {
             return res(false);

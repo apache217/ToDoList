@@ -61,7 +61,10 @@ class TodoController {
       task
         ? (task.isCompleted = req.body.isCompleted)
         : res.status(404).send(`Task is not found!`);
-      const write = await TodoService.patchStatus(req.data);
+      const write = await TodoService.patchStatus({
+        users: req.users,
+        todos: req.todos,
+      });
       write
         ? res.status(200).send(`Status is changed!`)
         : res.status(500).send(`Status is not changed!`);
