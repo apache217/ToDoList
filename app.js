@@ -57,10 +57,3 @@ app.listen(process.env.PORT, () => {
     PORT: ${process.env.PORT}`
   );
 });
-
-// const db = mongoose.connect(
-//   `${process.env.MONGO_CONNECTION_STRING}/${process.env.MONGO_DB_NAME}`,
-//   () => console.log("Connected to MongoDB")
-// );
-
-// console.log(db);
