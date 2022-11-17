@@ -57,6 +57,11 @@ const db = mongoose.connection;
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
+db.then(
+  (data) => console.log(data),
+  (data) => console.log(data)
+);
+
 app.listen(process.env.PORT, () => {
   console.log(
     `---Server started---

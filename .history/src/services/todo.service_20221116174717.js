@@ -2,9 +2,11 @@ const TodoModel = require("../models/todo.model");
 const Sentry = require("@sentry/node");
 
 class TodoService {
-  async getAll() {
+  async getAll(data) {
     try {
       const tasks = await TodoModel.find();
+      //.aggregate([{ $match: { _idUser: `${data}` } }])
+      //.toArray();
       return tasks;
     } catch (error) {
       console.log(error);

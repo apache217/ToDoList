@@ -15,7 +15,7 @@ class AuthService {
   async getAll() {
     try {
       const users = await AuthModel.find();
-      return users;
+      return tasks;
     } catch (error) {
       console.log(error);
       Sentry.captureException(error);

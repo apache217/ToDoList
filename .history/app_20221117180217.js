@@ -50,7 +50,7 @@ Sentry.init({
 app.use("/api", routes);
 app.use(Sentry.Handlers.errorHandler());
 
-const mongoDB = process.env.MONGO_CONNECTION_STRING;
+const mongoDB = "mongodb+srv://lb89:24Vlad2022@cluster0.tgxhzkw.mongodb.net/data?retryWrites=true&w=majority";
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;

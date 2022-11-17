@@ -50,12 +50,20 @@ Sentry.init({
 app.use("/api", routes);
 app.use(Sentry.Handlers.errorHandler());
 
+
 const mongoDB = process.env.MONGO_CONNECTION_STRING;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 
-db.on("error", console.error.bind(console, "MongoDB connection error:"));
+db.on("error", console.error.bind(console, "MongoDB connection error:"))
+
+// const mongoDB = "mongodb+srv://lb89:24Vlad2022@cluster0.tgxhzkw.mongodb.net/data?retryWrites=true&w=majority";
+// mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
+
+// const db = mongoose.connection;
+
+// db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 app.listen(process.env.PORT, () => {
   console.log(
