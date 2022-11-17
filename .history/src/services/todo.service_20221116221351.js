@@ -5,6 +5,8 @@ class TodoService {
   async getAll() {
     try {
       const tasks = await TodoModel.find();
+      //.aggregate([{ $match: { _idUser: `${data}` } }])
+      //.toArray();
       return tasks;
     } catch (error) {
       console.log(error);

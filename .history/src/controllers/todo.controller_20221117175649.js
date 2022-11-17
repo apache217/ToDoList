@@ -21,7 +21,7 @@ class TodoController {
   }
   async postTodo(req, res) {
     try {
-      req.body._idUser = req.user._id;
+      req.body._idUser = `${req.users._id}`;
       const write = await TodoService.postTodo(req.body);
       if (write) {
         res.status(200).send(`New task created!`);

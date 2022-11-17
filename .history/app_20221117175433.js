@@ -51,11 +51,20 @@ app.use("/api", routes);
 app.use(Sentry.Handlers.errorHandler());
 
 const mongoDB = process.env.MONGO_CONNECTION_STRING;
-mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(
+  mongoDB,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  console.log("Connected to MongoDB")
+);
 
 const db = mongoose.connection;
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
+
+db.then(
+  (data) => console.log(data),
+  (data) => console.log(data)
+);
 
 app.listen(process.env.PORT, () => {
   console.log(
