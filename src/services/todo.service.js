@@ -1,10 +1,11 @@
 const TodoModel = require("../models/todo.model");
 const Sentry = require("@sentry/node");
+const { ObjectId } = require("mongoose");
 
 class TodoService {
-  async getAll() {
+  async getAll(data) {
     try {
-      const tasks = await TodoModel.find();
+      const tasks = await TodoModel.find({ _idUser: data });
       return tasks;
     } catch (error) {
       console.log(error);

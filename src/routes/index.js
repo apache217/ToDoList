@@ -14,21 +14,20 @@ router.use(async (req, res, next) => {
   } else
     return res
       .status(500)
-      .send({ message: "Error while getting data from DB!!!" });
+      .send({ message: "Error while getting data from DB!" });
 });
 
 router.use("/", authRoutes);
 
 router.use(authenticateToken, async (req, res, next) => {
-  const todos = await TodoService.getAll();
-  console.log(todos);
+  const todos = await TodoService.getAll(req.user._id);
   if (todos) {
     req.todos = todos;
     next();
   } else
     return res
       .status(500)
-      .send({ message: "Error while getting data from DB!!!" });
+      .send({ message: "Error while getting data from DB!" });
 });
 
 router.use("/", todoRoutes);

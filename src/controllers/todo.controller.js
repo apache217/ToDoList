@@ -2,17 +2,15 @@ const TodoService = require("../services/todo.service");
 const Sentry = require("@sentry/node");
 
 class TodoController {
-  async getTodos(req, res) {
+  getTodos(req, res) {
     try {
-      const result = req.todos
-        .filter((item) => `${item._idUser}` === `${req.user._id}`)
-        .map((item) => {
-          item.id = item._id;
-          item.idUser = item._idUser;
-          Reflect.deleteProperty(item, `_id`);
-          Reflect.deleteProperty(item, `_idUser`);
-          return item;
-        });
+      const result = req.todos.map((item) => {
+        item.id = item._id;
+        item.idUser = item._idUser;
+        Reflect.deleteProperty(item, `_id`);
+        Reflect.deleteProperty(item, `_idUser`);
+        return item;
+      });
       res.status(200).send(result);
     } catch (err) {
       Sentry.captureException(err);
@@ -40,7 +38,6 @@ class TodoController {
         ? (task.title = req.body.title)
         : res.status(404).send(`Task is not found!`);
       const write = await TodoService.patchTodo(task._id, task);
-      console.log(task);
       write
         ? res.status(200).send(`Title is changed!`)
         : res.status(500).send(`Title is not changed!`);
