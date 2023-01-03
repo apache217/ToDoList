@@ -1,6 +1,5 @@
-const { Sequelize, Model, DataTypes } = require("sequelize");
-require("dotenv").config();
-const sequelize = new Sequelize(process.env.POSTGRE_CONNECTION_STRING)
+const Sequelize = require("sequelize");
+const sequelize = new Sequelize('postgres://vladi:24Vlad2022@localhost:5432/ToDo')
 
 const Todos = sequelize.define("todo", {
   _id: {

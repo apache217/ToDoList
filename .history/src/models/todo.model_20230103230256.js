@@ -1,8 +1,7 @@
-const { Sequelize, Model, DataTypes } = require("sequelize");
-require("dotenv").config();
-const sequelize = new Sequelize(process.env.POSTGRE_CONNECTION_STRING)
+const Sequelize = require("sequelize");
+const sequelize = new Sequelize("postgres::memory:");
 
-const Todos = sequelize.define("todo", {
+const TodoSchema = sequelize.define("todo", {
   _id: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -14,4 +13,4 @@ const Todos = sequelize.define("todo", {
   isCompleted: { type: Sequelize.BOOLEAN, allowNull: false },
 });
 
-module.exports = Todos;
+module.exports = TodoSchema;

@@ -16,7 +16,7 @@ class TodoService {
   }
   async postTodo(data) {
     try {
-      const result = await Todos.create(data);
+      const result = Todos.create(data);
       return result;
     } catch (error) {
       console.log(error);
@@ -37,7 +37,7 @@ class TodoService {
   }
   async deleteTodo(id) {
     try {
-      const result = await Todos.destroy({ where: { id } });
+      const result = Todos.destroy({ where: { id } });
       return result;
     } catch (error) {
       console.log(error);

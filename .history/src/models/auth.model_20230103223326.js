@@ -1,9 +1,8 @@
-const { Sequelize, Model, DataTypes } = require("sequelize");
-require("dotenv").config();
-const sequelize = new Sequelize(process.env.POSTGRE_CONNECTION_STRING)
+const Sequelize = require("sequelize");
+const sequelize = new Sequelize("postgres::ToDo:");
 
-const Users = sequelize.define("user", {
-  _id: {
+const UserSchema = sequelize.define("user", {
+  id: {
     type: Sequelize.STRING,
     allowNull: false,
     primaryKey: true,
@@ -18,4 +17,4 @@ const Users = sequelize.define("user", {
   isAdmin: { type: Sequelize.BOOLEAN, allowNull: true },
 });
 
-module.exports = Users;
+module.exports = UserSchema;

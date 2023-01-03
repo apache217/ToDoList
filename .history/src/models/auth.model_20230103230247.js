@@ -1,8 +1,7 @@
 const { Sequelize, Model, DataTypes } = require("sequelize");
-require("dotenv").config();
-const sequelize = new Sequelize(process.env.POSTGRE_CONNECTION_STRING)
+const sequelize = new Sequelize('postgres://vladi:24Vlad2022@localhost:5432/ToDo')
 
-const Users = sequelize.define("user", {
+const UserSchema = sequelize.define("user", {
   _id: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -18,4 +17,4 @@ const Users = sequelize.define("user", {
   isAdmin: { type: Sequelize.BOOLEAN, allowNull: true },
 });
 
-module.exports = Users;
+module.exports = UserSchema;

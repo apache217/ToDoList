@@ -13,13 +13,11 @@ class AuthService {
   }
   async getAll() {
     try {
-      console.log(`lox`)
       const result = await Users.findAll();
-
-      // console.log(result)
+      console.log(`lox`)
       return result;
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
       Sentry.captureException(error);
     }
   }

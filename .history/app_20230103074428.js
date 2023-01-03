@@ -7,6 +7,7 @@ const routes = require("./src/routes/index");
 const Sentry = require("@sentry/node");
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
+const { Pool } = require("pg");
 require("dotenv").config();
 
 app.use(bodyParser.json());
@@ -17,7 +18,7 @@ const swaggerOptions = {
     openapi: "3.0.0",
     info: {
       title: "User API",
-      description: "To Do List with PostgreSQL",
+      description: "To Do List with mongoose",
       servers: ["http://localhost:3000"],
       version: "1.1.1",
     },
@@ -49,6 +50,32 @@ Sentry.init({
 
 app.use("/api", routes);
 app.use(Sentry.Handlers.errorHandler());
+
+// async function main() {
+//   const pool = new Pool();
+//   const client = await pool.connect();
+//   client.release();
+// }
+
+// main();
+
+// const pool = new Pool({
+//   user: process.env.DB_USER,
+//   password: process.env.PASSWORD,
+//   host: process.env.HOST,
+//   port: 5433,
+//   database: process.env.DATABASE,
+// });
+
+// pool.connect();
+// pool.query("SELECT * FROM USERS", (err, result) => {
+//   if (!err) {
+//     console.log(result);
+//   } else {
+//     console.log(err);
+//   }
+// });
+// pool.end();
 
 const sequelize = new Sequelize(
   process.env.DATABASE,

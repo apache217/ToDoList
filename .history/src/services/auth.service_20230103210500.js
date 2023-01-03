@@ -4,7 +4,7 @@ const Sentry = require("@sentry/node");
 class AuthService {
   async postUser(data) {
     try {
-      const newUser = await Users.create(data);
+      const newUser = Users.create(data);
       return newUser;
     } catch (error) {
       console.log(error);
@@ -13,13 +13,9 @@ class AuthService {
   }
   async getAll() {
     try {
-      console.log(`lox`)
-      const result = await Users.findAll();
-
-      // console.log(result)
-      return result;
+      return await Users.findAll();
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
       Sentry.captureException(error);
     }
   }

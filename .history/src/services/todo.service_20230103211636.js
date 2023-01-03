@@ -4,10 +4,7 @@ const Sentry = require("@sentry/node");
 class TodoService {
   async getAll(data) {
     try {
-      const result = await Todos.findAll({
-        where: { _idUser: data },
-        raw: true,
-      });
+      const result = await Todos.findAll();
       return result;
     } catch (error) {
       console.log(error);
@@ -16,8 +13,10 @@ class TodoService {
   }
   async postTodo(data) {
     try {
-      const result = await Todos.create(data);
-      return result;
+      return new Promise((res) => {
+        const module = Todos.create(data);
+        res(module);
+      });
     } catch (error) {
       console.log(error);
       Sentry.captureException(error);
@@ -25,11 +24,12 @@ class TodoService {
   }
   async patchTodo(id, newObj) {
     try {
-      await Todos.update(newObj, { where: { id } });
-      const result = await Todos.findOne({
-        where: { id },
+      return new Promise(async (res) => {
+        await Students.update(body, { where: { id } });
+        await Students.findOne({
+          where: { id },
+        }).then((result) => res(result));
       });
-      return result;
     } catch (error) {
       console.log(error);
       Sentry.captureException(error);
@@ -37,8 +37,8 @@ class TodoService {
   }
   async deleteTodo(id) {
     try {
-      const result = await Todos.destroy({ where: { id } });
-      return result;
+      const tasks = await TodoModel.deleteOne(id);
+      return tasks;
     } catch (error) {
       console.log(error);
       Sentry.captureException(error);

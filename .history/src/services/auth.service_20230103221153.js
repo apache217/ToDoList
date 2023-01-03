@@ -13,10 +13,7 @@ class AuthService {
   }
   async getAll() {
     try {
-      console.log(`lox`)
       const result = await Users.findAll();
-
-      // console.log(result)
       return result;
     } catch (error) {
       console.log(error.message);

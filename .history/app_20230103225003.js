@@ -50,6 +50,32 @@ Sentry.init({
 app.use("/api", routes);
 app.use(Sentry.Handlers.errorHandler());
 
+// async function main() {
+//   const pool = new Pool();
+//   const client = await pool.connect();
+//   client.release();
+// }
+
+// main();
+
+// const pool = new Pool({
+//   user: process.env.DB_USER,
+//   password: process.env.PASSWORD,
+//   host: process.env.HOST,
+//   port: 5433,
+//   database: process.env.DATABASE,
+// });
+
+// pool.connect();
+// pool.query("SELECT * FROM USERS", (err, result) => {
+//   if (!err) {
+//     console.log(result);
+//   } else {
+//     console.log(err);
+//   }
+// });
+// pool.end();
+
 const sequelize = new Sequelize(
   process.env.DATABASE,
   process.env.DB_USER,

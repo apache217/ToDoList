@@ -16,7 +16,7 @@ class TodoService {
   }
   async postTodo(data) {
     try {
-      const result = await Todos.create(data);
+      const result = Todos.create(data);
       return result;
     } catch (error) {
       console.log(error);
@@ -25,11 +25,10 @@ class TodoService {
   }
   async patchTodo(id, newObj) {
     try {
-      await Todos.update(newObj, { where: { id } });
-      const result = await Todos.findOne({
-        where: { id },
-      });
-      return result;
+      await Todos.update(newObj, { where: { _id } });
+      const result =  await Todos.findOne({
+        where: { _id },
+      }).then((result) => res(result));
     } catch (error) {
       console.log(error);
       Sentry.captureException(error);
@@ -37,8 +36,8 @@ class TodoService {
   }
   async deleteTodo(id) {
     try {
-      const result = await Todos.destroy({ where: { id } });
-      return result;
+      const tasks = await TodoModel.deleteOne(id);
+      return tasks;
     } catch (error) {
       console.log(error);
       Sentry.captureException(error);
